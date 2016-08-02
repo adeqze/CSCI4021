@@ -1,0 +1,10 @@
+programs = app-server1 app-server2
+
+all: clean $(programs)
+
+app-server1: 
+	  gcc app-server1.c -o app-server1
+app-server2:
+	  gcc app-server2.c -o app-server2
+clean:
+	rm -f $(programs) *.o

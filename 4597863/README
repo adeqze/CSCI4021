@@ -1,0 +1,70 @@
+This is the README for Homework 3 CSCI4211 Fall 2015.
+
+**********************************
+Author:
+**********************************	
+Mohamed Yunis : noorx004@umn.edu
+
+**********************************
+CSE Machine code tested on:
+**********************************
+KH4250-30
+
+**********************************
+Files:
+**********************************
+README : This file
+
+app_server1.c:	Server Program: The file that contains the code for app-server1
+app-server2.c:  Server program:  The file that contains the code for app-server2
+dir-server.c:	The file containing the code for dir-server.c
+app-client.c:   The file containing the code for app-client
+db-server: 	The excutable that was provided in the class moodle page. 
+		Since you have access to this file, I won't be uploading it. 
+makefile: 	File for compiling the source codes. 
+
+********************
+Syntax and Usage:
+********************
+dir-server.c is designed to always run from "apollo.cselabs.umn.edu". I haven't tried running it from any other machine
+	while working on this project so running it from any other machine may lead to undesirable results. 
+
+app-server1 and app-server1 were tested to run from the machines in KH4250 but they can also be run from any other machine since their IP address and ports of usage are determined during run time. 
+
+app-client was tested to run from any of the machines in Lind40 but they can also be run from any other machine like app-servers. 
+
+the db-server was tested to always run  from "atlas.cselabs.umn.ed", likewise running it from any other machine may lead to underisable results. 
+
+
+
+**************
+Server usage
+**************
+The syntax for running the codes is as follows:
+app-server1 and app-server2: ./<app-server> <port>
+dir-server 		   :./<dir-server> <port>
+app-client  	           :./<app-client> <port_of_dir> <port_of_db>
+db-server		   : ./<db-server> <port> 
+
+
+The port the app-servers run on is the same port which dir-server is running on. 
+
+Each of the source codes comes with a make file. You can compile them by:
+>make
+
+This will clean all the .o files and create the excutables. 
+
+*******************
+Issues
+*****************
+db-server gets hanging when I try to send multiple set-records and get-records in the same connection. 
+If I try to hard code it the messages, sometimes it works. I don't know what is making it do that. There are sections commented out where the hard coding works. 
+
+This affected the file sending in between app-client and app-server since the connection is the same. If I quit the connection on the app-client side, then I can the file transfer completion. 
+
+The completion of data transfer can be checked by not  running the db-server. 
+
+
+
+
+
